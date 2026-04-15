@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tadami - A Polished Media Reader</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .aurora-gradient {
+            background: linear-gradient(135deg, #5d3fd3 0%, #00647b 100%);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 12px 32px rgba(93, 63, 211, 0.08);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7f9;
+            color: #2c2f31;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5d3fd3",
+                    "on-surface": "#2c2f31",
+                    "on-background": "#2c2f31",
+                    "surface": "#f5f7f9",
+                    "on-primary-fixed": "#000000",
+                    "surface-container": "#e5e9eb",
+                    "inverse-surface": "#0b0f10",
+                    "primary": "#5d3fd3",
+                    "on-tertiary-container": "#4a0080",
+                    "inverse-on-surface": "#9a9d9f",
+                    "on-error-container": "#510017",
+                    "tertiary": "#8126cf",
+                    "on-secondary": "#e1f6ff",
+                    "tertiary-dim": "#740ec2",
+                    "primary-fixed": "#a391ff",
+                    "secondary": "#00647b",
+                    "surface-bright": "#f5f7f9",
+                    "secondary-fixed-dim": "#30d4ff",
+                    "surface-container-low": "#eef1f3",
+                    "error-dim": "#a70138",
+                    "on-tertiary-fixed-variant": "#560094",
+                    "on-error": "#ffefef",
+                    "outline": "#747779",
+                    "tertiary-container": "#ce9bff",
+                    "primary-dim": "#5130c6",
+                    "on-primary-fixed-variant": "#2c008f",
+                    "secondary-fixed": "#7edeff",
+                    "on-tertiary": "#fbefff",
+                    "on-secondary-container": "#004e61",
+                    "outline-variant": "#abadaf",
+                    "surface-container-highest": "#d9dde0",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#f74b6d",
+                    "on-surface-variant": "#595c5e",
+                    "surface-container-high": "#dfe3e6",
+                    "background": "#f5f7f9",
+                    "on-secondary-fixed-variant": "#00586d",
+                    "tertiary-fixed-dim": "#c488ff",
+                    "surface-dim": "#d0d5d8",
+                    "secondary-container": "#7edeff",
+                    "on-secondary-fixed": "#003a48",
+                    "error": "#b41340",
+                    "tertiary-fixed": "#ce9bff",
+                    "surface-variant": "#d9dde0",
+                    "on-primary": "#f6f0ff",
+                    "on-primary-container": "#230076",
+                    "on-tertiary-fixed": "#270048",
+                    "inverse-primary": "#937dff",
+                    "primary-container": "#a391ff",
+                    "primary-fixed-dim": "#9680ff",
+                    "secondary-dim": "#00576b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            }
+          },
+        }
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-slate-50/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
+<div class="text-2xl font-black tracking-tighter text-indigo-600">Tadami</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-indigo-600 font-bold border-b-2 border-indigo-500 font-['Manrope'] text-sm tracking-tight transition-all duration-300" href="#">Features</a>
+<a class="text-slate-600 hover:text-indigo-500 font-['Manrope'] text-sm tracking-tight transition-all duration-300" href="#">Changelog</a>
+<a class="text-slate-600 hover:text-indigo-500 font-['Manrope'] text-sm tracking-tight transition-all duration-300" href="#">Discord</a>
+<a class="text-slate-600 hover:text-indigo-500 font-['Manrope'] text-sm tracking-tight transition-all duration-300" href="#">GitHub</a>
+</div>
+<div class="flex items-center">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-['Inter'] text-sm font-bold scale-95 active:scale-90 transition-transform aurora-gradient">
+                    Download
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-20 pb-32 px-6">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/10 text-primary rounded-full text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                        New Aurora Design
+                    </div>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-tight">
+                        Tadami: The <span class="text-primary">Ethereal</span> Reader.
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        A polished Aniyomi fork meticulously crafted for anime, manga, and novels. Experience an atmospheric UI that treats content like art.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full text-lg font-bold aurora-gradient ambient-shadow flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">download</span>
+                            Download Latest
+                        </button>
+<button class="bg-surface-container-high text-primary px-8 py-4 rounded-full text-lg font-bold flex items-center gap-2 hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined">code</span>
+                            View on GitHub
+                        </button>
+</div>
+<p class="text-sm text-on-surface-variant/70 italic">Requires Android 8.0 or higher.</p>
+</div>
+<div class="relative">
+<!-- Aurora Stacked Hero Layout -->
+<div class="relative w-full aspect-[4/3]">
+<div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-xl overflow-hidden ambient-shadow rotate-3 transform translate-x-4">
+<img class="w-full h-full object-cover" data-alt="Screenshot of a sleek anime reader interface showing a vibrant library of colorful series covers with glassmorphism effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhr3scoE3PTsAUdY1N1sHD7nrB5KoV5LYmaNZbnWtjCL20Hx-BMeOq74CgPD2M4-nE_pGbQQE6OEpFTIXRrK73U7NFpfAR63hJMs8OHGXOEIaHQghknYaD8p4oWATRbzRqWuUXPOi3We_ZaAgcngY8tdiNb7qa4SMtav6fGXgwcAb9IcqFjnk6Q2JBwvCIbFFfks4an8FLSDMS3d7MKH_ySNAiBoyI0MwAV3xjUhYx7TG8smLc7-G-VWG8tYiLKkBHviJ0WmsTiHUK"/>
+</div>
+<div class="absolute bottom-0 left-0 w-4/5 h-4/5 rounded-xl overflow-hidden ambient-shadow -rotate-2 transform -translate-x-4">
+<img class="w-full h-full object-cover" data-alt="Mobile application screen showing a vertical scrolling list of manga chapters with soft purple backgrounds and clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEdmXCqeixghEQckSrtWlQPk8p91hXNMG33vjH5-ZE6QuN2HUI7lm9YLwypoF46H3qRFGX-J0Y5e0Z8UbyEzO3-CSeEBhGkSeNkVz_KMPK3M2HIk_UN_FSud5tACnm5R489QA758ngHLvZmIYyZUcDRgIWDYJL98BkGYpM004WS-_lPM0jlKS-pgnrfgtRAta1HblNPugH-U2f0wme8softIiAiTO9r7c1vCOLdj2F4cyMo4AJ4ZKb-1ORNL3hVRju5xMxvkJ0Z0F5"/>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/5 h-4/5 glass-card rounded-2xl border border-white/20 p-4 ambient-shadow">
+<div class="w-full h-full rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-center p-6 gap-4">
+<span class="material-symbols-outlined text-primary text-5xl">menu_book</span>
+<div class="font-headline font-bold text-lg">Light Novel Ready</div>
+<div class="text-xs text-on-surface-variant">Optimized typography for the perfect reading experience.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- What is Different Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold tracking-tight mb-4">What makes us different?</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Tadami isn't just another fork. It's a ground-up reconsideration of how we consume media.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<h3 class="text-xl font-bold">Aurora-Focused UI</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">A visual philosophy built on tonal layering and atmospheric depth. No harsh lines, just content and focus.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow space-y-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<h3 class="text-xl font-bold">Compose-First</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Built using Jetpack Compose, ensuring the app shell is fluid, modern, and highly responsive to user input.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow space-y-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<h3 class="text-xl font-bold">Novel Oriented</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Unlike other readers, novels are first-class citizens with custom rendering engines and typography controls.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl font-bold tracking-tight mb-2">Power and Elegance</h2>
+<p class="text-on-surface-variant">The feature set you need, delivered with the style you deserve.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-full">
+<!-- Big Bento Item: Universal Library -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between overflow-hidden relative group">
+<div class="relative z-10">
+<div class="flex gap-2 mb-4">
+<span class="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">New</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">Unified Library</h3>
+<p class="text-on-surface-variant max-w-xs mb-8">Manage your Anime, Manga, and Novels in a single, high-performance interface. One tracking, one update feed, total control.</p>
+</div>
+<div class="mt-auto relative z-10">
+<div class="flex -space-x-4 overflow-hidden">
+<img class="inline-block h-16 w-16 rounded-lg ring-4 ring-surface-container-low object-cover" data-alt="Portrait illustration of an anime character with vibrant hair and expressive eyes in a professional artistic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxggDwkVlePju18njE9oNIq8b7xiae6v6dYpWXFS71iff40EvzuRRbu4ODV4qC18t9YlB2VobeUmUP-tw-z0Kw8097nWvq3QcitvQwTcPoCS2nM_8di2cmkx0bFqlM82TYi3rttASlAD83kGBTuAYy61ONlqwK8TvNP5vOc94xUkw6nPgDnuG4T7z9j-AxQAjSBKIWLJTHaMfnDUWVFv4uxS6V-uOXzzgF1CMUmovFHdKwL1bOtHf5B1pbZyewS8Ff7NVgoOZI4dkh"/>
+<img class="inline-block h-16 w-16 rounded-lg ring-4 ring-surface-container-low object-cover" data-alt="Cover of a classic book with gold foil lettering on a dark blue linen texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABddEWmyx6I_OnCopD85mV1mqxG--SNCY2WWmyn0qqamsz5xHk81tLszG-mFwToCQt41kQuaGE8F4ekz-mJKPsKW9ZHB7MjW5Wt0wqFSkf_iGAe5fGELEAVGiU5QPVzRuDFxKpznh-taH8rHiaoHF4NQZb8WRhlWIF0du-A4AKvpueiZQJaagpGZJ0CJ-TBFgLAbQPK6GF6X0bfkn9w1X_9ahCw4JqTtRjvzUSgVlg6nxwiHVWWj5eoSzlU231OJEimAcx8VLAfqgj"/>
+<img class="inline-block h-16 w-16 rounded-lg ring-4 ring-surface-container-low object-cover" data-alt="Stylized black and white manga panel featuring dynamic action lines and a character in motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBRGVL-IiTeAOQkCGGNAKiqS7GTqREhaEL8ThSUfrku_ND9oB3siZJRNBCld789IweLQJEMVfJvzKwgWrMhnO9GW5gC2XoLXXR4QFyhhXEdCh1WUUoLOKC75JpgJjpC5gtU5c6qsEhNsOH5hePfqyM5L9espQ8K9fY7bu3YOxZyrPKP3aM8Ub94OqWQw_YP_pplTThjTdilORoxE46y_IV0s7bed8-MFmTdCdnkLV63kE640nCWoMsuLjTCQpiDPTSvDgajA37zII"/>
+</div>
+</div>
+<!-- Background decoration -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
+</div>
+<!-- Medium Bento: Customization -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 ambient-shadow flex items-center justify-between overflow-hidden">
+<div class="space-y-2">
+<h3 class="text-xl font-bold">Deep Customization</h3>
+<p class="text-sm text-on-surface-variant">Tweak the Aurora theme to your heart's content. Accents, transparency, and motion.</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="w-12 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+<div class="w-12 h-6 bg-outline-variant/30 rounded-full relative">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Small Bento: Recent Blocks -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-center gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">history</span>
+</div>
+<span class="font-bold">Resume</span>
+</div>
+<p class="text-xs text-on-surface-variant">Pick up exactly where you left off with "Recent Blocks" on your home screen.</p>
+</div>
+<!-- Small Bento: Backup -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-center gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary/10 rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<span class="font-bold">Backup</span>
+</div>
+<p class="text-xs text-on-surface-variant">One-click backup and restore for all your media metadata and history.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Showcase / App Screenshot -->
+<section class="py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="glass-card rounded-[2rem] p-12 border border-white/40 ambient-shadow relative overflow-hidden">
+<div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2 space-y-6">
+<h2 class="text-5xl font-extrabold tracking-tight">The <span class="text-primary">Aurora Home</span> Hub</h2>
+<p class="text-lg text-on-surface-variant">The new greeting header welcomes you back, showing your most anticipated updates and a beautifully curated hero card for your current obsession.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Dynamic Greeting System</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Curated Hero Showcase</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Instant Recent Access</span>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2">
+<img class="w-full rounded-2xl ambient-shadow" data-alt="High-tech modern user interface dashboard on a tablet showing smooth gradients, rounded icons, and minimalist layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsGqV_mDYIbXKz9mlvOkNRgcN7UnN1tasdQFct_W9EGgsRVyo_Tln51fwK96FEhUf6592g5HR6HsfWxS_AeQEj5j3g2Z4ow1CA8dkqIFukf9o8OZPoGGFBVE3fdDQ0kMAcX3_cvoVhMzkyYQec0oyBYEqi7hgIzu8ANW5oN8jeTQ7shbN3kS56rmaEqGXxAfHXvq2deDzqDpxxqB5eTYFaA9HbrNcJY-GjOE84xCzLuA9FB9bu1-NVYcj9uY-HrWqiLauDele0KzNl"/>
+</div>
+</div>
+<!-- Background aurora-like element -->
+<div class="absolute -top-1/2 -left-1/4 w-[150%] h-[150%] aurora-gradient opacity-5 -z-0 rotate-12"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 full-width py-12 tonal-shift-bg-surface-container-low">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
+<div class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500">
+                © 2024 Tadami Project. Built with Aurora.
+            </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-indigo-400 transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-indigo-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-indigo-400 transition-colors" href="#">GitHub Source</a>
+<a class="font-['Inter'] text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-indigo-400 transition-colors" href="#">Community Guidelines</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-slate-400 hover:text-indigo-500 transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.815 1.102.815 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
