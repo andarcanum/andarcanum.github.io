@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tadami - Anime, manga and ranobe in one Aurora library</title>
+  <meta name="description" content="Tadami is a polished Aniyomi fork for anime, manga and novels with Aurora UI, extensions, backups, sync and a refined reading experience.">
+  <meta name="theme-color" content="#08111d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f2e8" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="Tadami - Anime, manga and ranobe in one Aurora library">
+  <meta property="og:description" content="A polished Aniyomi fork focused on Aurora-style UI, reading comfort and unified media management.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andarcanum.github.io/Tadami-Aniyomi-fork/">
+  <meta property="og:image" content="https://andarcanum.github.io/Tadami-Aniyomi-fork/assets/og-image.png">
+  <link rel="canonical" href="https://andarcanum.github.io/Tadami-Aniyomi-fork/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-bg" aria-hidden="true">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="aurora aurora-three"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="site-header" data-header>
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Tadami home">
+        <img src="assets/logo.svg" width="36" height="36" alt="" aria-hidden="true">
+        <span>Tadami</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a href="#features">Features</a>
+        <a href="#aurora">Aurora</a>
+        <a href="#download">Download</a>
+        <a href="#build">Build</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light theme" data-theme-toggle>
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <a class="button button-ghost" href="https://github.com/andarcanum/Tadami-Aniyomi-fork" rel="noopener">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Aurora fork for anime, manga and ranobe</p>
+          <h1>One calm library for every story you follow.</h1>
+          <p class="hero-lede">Tadami brings anime, manga and novels into a single open-source Android app, wrapped in a polished Aurora interface built for browsing, watching, reading and restoring your collection with less friction.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/andarcanum/Tadami-Aniyomi-fork/releases/latest" rel="noopener" data-download-link>
+              <span>Download latest APK</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/></svg>
+            </a>
+            <a class="button button-soft" href="#features">Explore features</a>
+          </div>
+          <div class="meta-strip" aria-label="Project quick facts">
+            <div>
+              <strong data-stars>157</strong>
+              <span>GitHub stars</span>
+            </div>
+            <div>
+              <strong>Android 8+</strong>
+              <span>API 26+</span>
+            </div>
+            <div>
+              <strong data-release-name>v0.45</strong>
+              <span>Latest release</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay-1" data-tilt>
+          <div class="orbital-note note-one">Aurora Home</div>
+          <div class="orbital-note note-two">Novel sync</div>
+          <div class="phone-shell" aria-label="Stylized Tadami app preview">
+            <div class="phone-top"></div>
+            <div class="phone-screen">
+              <div class="status-row"><span>9:41</span><span>100%</span></div>
+              <div class="app-head">
+                <div>
+                  <span class="muted">Welcome back</span>
+                  <strong>Reader</strong>
+                </div>
+                <span class="avatar"></span>
+              </div>
+              <div class="segmented" role="tablist" aria-label="Media preview tabs">
+                <button type="button" class="active" data-media-tab="Anime">Anime</button>
+                <button type="button" data-media-tab="Manga">Manga</button>
+                <button type="button" data-media-tab="Ranobe">Ranobe</button>
+              </div>
+              <div class="home-card">
+                <div class="media-glyph" data-media-glyph>
+                  <span></span>
+                </div>
+                <h3 data-media-title>Start watching</h3>
+                <p data-media-copy>Add sources and continue your queue from a single Aurora hub.</p>
+                <button type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5a1 1 0 0 1 1.5-.86l7 4a1 1 0 0 1 0 1.72l-7 4A1 1 0 0 1 11 13V5Zm-7 2a1 1 0 0 1 1-1h3a1 1 0 0 1 0 2H6v9h12v-3a1 1 0 1 1 2 0v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7Z"/></svg> Enable repository</button>
+              </div>
+              <div class="recent-row">
+                <div><span></span><strong>Title cards</strong><small>Glass, glow, tags</small></div>
+                <div><span></span><strong>Updates</strong><small>Per media schedule</small></div>
+              </div>
+              <div class="bottom-tabs" aria-hidden="true">
+                <span class="active">Home</span><span>Titles</span><span>New</span><span>Browse</span><span>More</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logo-cloud section-tight" aria-label="Core Tadami media types">
+      <div class="container media-pill-row reveal">
+        <span>Anime extensions</span>
+        <span>Manga libraries</span>
+        <span>Ranobe reading</span>
+        <span>Backups</span>
+        <span>Google Drive sync</span>
+        <span>Aurora surfaces</span>
+      </div>
+    </section>
+
+    <section id="features" class="section-pad">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Built for the long watchlist</p>
+          <h2>Everything feels connected without feeling crowded.</h2>
+          <p>Tadami keeps the familiar Aniyomi foundation while focusing on refined entry screens, media-specific discovery and a reader experience that respects your preferences.</p>
+        </div>
+        <div class="bento-grid">
+          <article class="feature-card feature-card-large reveal">
+            <div class="card-icon">01</div>
+            <h3>Anime, manga and novels in one shell</h3>
+            <p>Browse separate source ecosystems, then manage library, history, updates and downloads from a unified app structure.</p>
+            <div class="mini-map" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </article>
+          <article class="feature-card reveal reveal-delay-1">
+            <div class="card-icon">02</div>
+            <h3>Aurora Home</h3>
+            <p>Greeting header, hero card, recent blocks and media sections make the app feel more like a personal hub.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <div class="card-icon">03</div>
+            <h3>Reader and player comfort</h3>
+            <p>Theme tuning, behavior settings, download queues and novel-oriented improvements support long sessions.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="card-icon">04</div>
+            <h3>Extension-first browsing</h3>
+            <p>Install and browse sources for each media type with compatibility work for novel ecosystems.</p>
+          </article>
+          <article class="feature-card feature-card-wide reveal reveal-delay-1">
+            <div class="card-icon">05</div>
+            <h3>Backups, restore and optional sync</h3>
+            <p>Keep library data under your control with local backups and optional Google Drive synchronization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aurora" class="section-pad split-section">
+      <div class="container split-grid">
+        <div class="reveal">
+          <p class="eyebrow"><span></span> Visual system</p>
+          <h2>A soft, responsive Aurora layer over a practical app core.</h2>
+          <p>The page uses a generated design system rather than a template: warm editorial spacing, high-contrast text, gentle blur, animated gradients and functional call-to-actions that stay readable in light and dark mode.</p>
+          <div class="check-list">
+            <div><span></span> Theme-aware tokens with automatic system preference support</div>
+            <div><span></span> Scroll reveals, tab motion and card hover transitions</div>
+            <div><span></span> Reduced-motion fallback for accessibility</div>
+          </div>
+        </div>
+        <div class="showcase-panel reveal reveal-delay-1">
+          <img src="assets/app-mockup.svg" width="820" height="620" alt="Generated Tadami interface mockup with Aurora cards and media sections">
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section-pad">
+      <div class="container download-card reveal">
+        <div>
+          <p class="eyebrow"><span></span> Get the app</p>
+          <h2 data-release-title>Tadami v0.45</h2>
+          <p data-release-body>Guided onboarding, Treasury rewards, per-media library auto-update schedules and another round of Aurora and novel sync refinements.</p>
+          <div class="release-meta">
+            <span data-release-date>Published May 20, 2026</span>
+            <span>Package: <code>com.tadami.aurora</code></span>
+          </div>
+        </div>
+        <div class="download-actions">
+          <a class="button button-primary" href="https://github.com/andarcanum/Tadami-Aniyomi-fork/releases/latest" rel="noopener" data-download-link>Open latest release</a>
+          <a class="button button-soft" href="https://github.com/andarcanum/Tadami-Aniyomi-fork/issues" rel="noopener">Report an issue</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="build" class="section-pad build-section">
+      <div class="container split-grid reverse">
+        <div class="code-card reveal" aria-label="Build commands">
+          <div class="code-title"><span></span> Build from source</div>
+          <pre><code>git clone https://github.com/andarcanum/Tadami-Aniyomi-fork.git
+cd Tadami-Aniyomi-fork
+./gradlew assembleRelease</code></pre>
+          <p>Requires JDK 17 and Android SDK with compile SDK 35.</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p class="eyebrow"><span></span> Open-source foundation</p>
+          <h2>Fork-friendly, contributor-friendly, and easy to inspect.</h2>
+          <p>The project is Apache-2.0 licensed and keeps a clear module map: app shell, domain logic, data repositories, extension APIs, local sources, Compose UI building blocks and translations.</p>
+          <a class="text-link" href="https://github.com/andarcanum/Tadami-Aniyomi-fork/blob/main/CONTRIBUTING.md" rel="noopener">Read contributing guide <span aria-hidden="true">-></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <img src="assets/logo.svg" width="34" height="34" alt="" aria-hidden="true">
+          <span>Tadami</span>
+        </a>
+        <p>A community Aniyomi fork for anime, manga and ranobe. The project does not host or distribute copyrighted content.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="https://github.com/andarcanum/Tadami-Aniyomi-fork" rel="noopener">GitHub</a>
+        <a href="https://github.com/andarcanum/Tadami-Aniyomi-fork/releases/latest" rel="noopener">Releases</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="privacy.html">Privacy policy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span data-year></span> Tadami contributors.</span>
+      <span>Apache-2.0. Built for GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
